@@ -49,7 +49,7 @@ void FBullCowGame::SetDifficulty(char num)
 
 //Getting the maxtries with respect to the difficulty chosen
 int32 FBullCowGame::GetMaxTries() const { 
-	 TMap<int32, int32> WordLengthToMaxTries = { {3,4} , {4,6} , {5,8} , {6,10} , {7,15} };
+	 TMap<int32, int32> WordLengthToMaxTries = { {3,5} , {4,8} , {5,10} , {6,15} , {7,18} };
 	return WordLengthToMaxTries[GetHiddenWordLength()];
 }
 
