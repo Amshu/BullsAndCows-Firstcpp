@@ -2,7 +2,9 @@
 #include <map>
 #include <cstdlib>
 #include <ctime>
+#include <unordered_set>
 
+#define TSet std::unordered_set
 #define TMap std::map
 
 FBullCowGame::FBullCowGame() { Reset(); } // default constructor
@@ -19,23 +21,23 @@ void FBullCowGame::SetDifficulty(char num)
 	switch (num)
 	{
 	case '1':
-		srand(time(0));
+		srand((unsigned int)time(0));
 		MyHiddenWord = WordList3[rand() % 10]; 
 		break;
 	case '2':
-		srand(time(0));
+		srand((unsigned int)time(0));
 		MyHiddenWord = WordList4[rand() % 10];
 		break;
 	case '3':
-		srand(time(0));
+		srand((unsigned int)time(0));
 		MyHiddenWord = WordList5[rand() % 10];
 		break;
 	case '4':
-		srand(time(0));
+		srand((unsigned int)time(0));
 		MyHiddenWord = WordList6[rand() % 10];
 		break;
 	case '5':
-		srand(time(0));
+		srand((unsigned int)time(0));
 		MyHiddenWord = WordList7[rand() % 10];
 		break;
 	default:
@@ -52,6 +54,7 @@ int32 FBullCowGame::GetMaxTries() const {
 }
 
 
+
 //Called by the constructor
 void FBullCowGame::Reset()
 {
@@ -63,6 +66,7 @@ void FBullCowGame::Reset()
 
 	return;
 }
+
 
 
 //Checking if the the guess is a valid input
@@ -87,6 +91,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 }
 
 
+
 //Helper function to check the guess is an isogram
 bool FBullCowGame::IsIsogram(FString Word) const
 {
@@ -107,6 +112,7 @@ bool FBullCowGame::IsIsogram(FString Word) const
 	}
 	return true;
 }
+
 
 
 //Helper function to check the guess is in lowercase

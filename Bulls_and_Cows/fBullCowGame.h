@@ -23,7 +23,7 @@ enum class EGuessStatus
 	Not_Isogram,
 	Wrong_Length,
 	Not_Lowercase,
-	Other_Characters
+	Not_Alphabet
 };
 
 

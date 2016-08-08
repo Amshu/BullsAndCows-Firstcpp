@@ -16,7 +16,6 @@ user interaction. For game logic see the FBullCowGame class
 using FText = std::string;
 using int32 = int;
 
-
 //Funtion Prototpes
 void PrintIntro();
 FText GetValidGuess();
@@ -25,11 +24,9 @@ void AskDifficulty();
 void PrintGameSummary();
 bool AskToPlayAgain();
 
-//Global Varialbles
-constexpr int32 NUMBER_OF_GUESSES = 5;
-
 //Global Instances
 FBullCowGame BCGame; //instantiate a new game
+
 
 
 //Start of Main Function
@@ -88,6 +85,7 @@ void PlayGame()
 }
 
 
+
 //Ask the player for thier preffered difficulty
 void AskDifficulty()
 {
@@ -129,7 +127,7 @@ FText GetValidGuess()
 	FText Guess = "";
 	EGuessStatus Status = EGuessStatus::Invalid_Status;
 
-	do {
+	do{
 		int32 MyCurrentTry = BCGame.GetCurrentTry();
 		std::cout << "Try " << MyCurrentTry << " of " << BCGame.GetMaxTries() << ". Enter your guess: ";
 		std::getline(std::cin, Guess);
@@ -144,7 +142,7 @@ FText GetValidGuess()
 			std::cout << "Please enter an Isogram i.e. a word with no repeating letters\n\n";
 			break;
 		case EGuessStatus::Not_Lowercase:
-			std::cout << "Please enter guess in lowercase only\n\n";
+			std::cout << "Please type in lowercase alphabets only\n\n";
 			break;
 		default:
 			//assume guess is valid
@@ -154,6 +152,7 @@ FText GetValidGuess()
 
 	return Guess;
 }
+
 
 
 //Asking if the player wants to play again
@@ -166,6 +165,7 @@ bool AskToPlayAgain()
 
 	return ((Response[0] == 'y') || (Response[0] == 'Y'));
 }
+
 
 
 // Printing the outcome of the game
