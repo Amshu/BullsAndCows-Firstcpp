@@ -89,7 +89,7 @@ void PlayGame()
 //Ask the player for thier preffered difficulty
 void AskDifficulty()
 {
-	char DifficultyInput = 0;
+	FText DifficultyInput = "";
 
 	std::cout << "Choose your difficutly:\n";
 	std::cout << "1. Easy Peesy - 3 letter Isogram.\n";
@@ -98,21 +98,21 @@ void AskDifficulty()
 	std::cout << "4. Think your good at this?? - 6 letter Isogram.\n";
 	std::cout << "5. ''I love torturing my brain'' }:[] - 7 letter Isogram.\n";
 	std::cout << "Input the number of your choice of difficulty - ";
-	std::cin >> DifficultyInput;
+	std::getline(std::cin, DifficultyInput);
 	
 	// Checking for a valid input of difficulty
-	TSet<char> Difficulties = { '1', '2', '3', '4', '5' };
+	const TSet<char> Difficulties = { '1', '2', '3', '4', '5' };
 	bool bLoop = false; 
 	while (!bLoop) {
 		//If the input is valid then call SetDifficulty() and set bLoop true
-		if (Difficulties.count(DifficultyInput) != 0) {
-			BCGame.SetDifficulty(DifficultyInput);
+		if (Difficulties.count(DifficultyInput[0]) != 0) {
+			BCGame.SetDifficulty(DifficultyInput[0]);
 			bLoop = true;
 		}
 		//else the loop keeps iterating unitl user gives a valid input
 		else {
 			std::cout << "Please enter only the number of the difficulty - ";
-			std::cin >> DifficultyInput;
+			std::getline(std::cin, DifficultyInput);
 		}
 	}
 
@@ -160,7 +160,7 @@ bool AskToPlayAgain()
 {
 	FText Response = "";
 	std::cout << "Do you want to play again, perhaps with the same or a higher difficulty?(y/n)\n";
-	std::cin >> Response;
+	std::getline(std::cin, Response);
 	std::cout << std::endl;
 
 	return ((Response[0] == 'y') || (Response[0] == 'Y'));
