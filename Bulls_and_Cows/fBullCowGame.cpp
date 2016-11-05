@@ -9,8 +9,8 @@
 
 FBullCowGame::FBullCowGame() { Reset(); } // default constructor
 
-int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }                 //\Getter Methods
-int32 FBullCowGame::GetHiddenWordLength() const { return MyHiddenWord.length(); }  ///
+int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }                 ///Getter Methods
+int32 FBullCowGame::GetHiddenWordLength() const { return MyHiddenWord.length(); }  
 
 bool FBullCowGame::IsGameWon() const { return bGameIsWon; }	
 

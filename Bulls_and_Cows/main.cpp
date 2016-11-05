@@ -52,7 +52,7 @@ void PrintIntro()
 	std::cout << "\n-----------------------------------------------------";
 	std::cout << "\nWelcome to the 'Bulls n Cows' word game!";
 	std::cout << "\n-----------------------------------------------------\n\n";
-	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength() << " letter Isogram I'm thinking of?\n"; 
+	std::cout << "Can you guess the Isogram I'm thinking of?\n"; 
 	std::cout << "An Isogram is a word with no repeating letters \nGo ahead give it a shot!\n\n";
 	std::cout << "*****************************************************\n\n";
 }
